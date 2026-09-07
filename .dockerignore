@@ -1,0 +1,26 @@
+# Git
+.git
+.gitignore
+
+# Node/UI
+kellar-ui/node_modules
+kellar-ui/dist
+kellar-ui/.npm
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Rust
+s3lf-c0n8ci0us/target/
+**/*.rs.bk
+
+# OS
+.DS_Store
+Thumbs.db
