@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { KellarAvatar } from './components/KellarAvatar';
 import { ThreatAlert } from './types';
 import axios from 'axios';
 
 export default function App() {
   const [systemStatus, setSystemStatus] = useState<'idle' | 'analyzing' | 'alert'>('idle');
-  const [alerts, setAlerts] = useState<ThreatAlert[]>([]);
+  const [alerts] = useState<ThreatAlert[]>([]);
 
-  // Polling S3lf-c0n8ci0us / Aquarius for status (mocked interval for structure)
   useEffect(() => {
     const checkStatus = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/health');
-        if (response.data.status === 'online' && systemStatus === 'idle') {
-          // System is nominal
+        const response = await axios.get('/api/health');
+        if (response.data.status === 'online') {
+          setSystemStatus('idle');
         }
       } catch (err) {
         console.error("Aquarius connection failed", err);
@@ -22,7 +21,7 @@ export default function App() {
     
     const interval = setInterval(checkStatus, 5000);
     return () => clearInterval(interval);
-  }, [systemStatus]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center p-8">
