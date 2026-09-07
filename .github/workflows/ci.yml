@@ -1,0 +1,32 @@
+name: Kellar Ecosystem CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Test UI (Node)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: cd kellar-ui && npm install && npm run build
+      
+      # Test Aquarius (Python)
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: cd aquarius && pip install -r requirements.txt
+      
+      # Test Fast Brain (Rust)
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+      - run: cd s3lf-c0n8ci0us && cargo test
