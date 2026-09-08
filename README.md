@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="IMG_4110.jpeg" alt="Kellar Logo" width="600">
+</p>
+
+<h1 align="center">Kellar</h1>
+
 🛡️ 𝙆𝙀𝙇𝙇𝘼𝙍 𝙀𝘾𝙊𝙎𝙔𝙎𝙏𝙀𝙈 🛡️
 ​High-Performance Asynchronous AI Network & Dynamic Threat Reasoning Engine
 
