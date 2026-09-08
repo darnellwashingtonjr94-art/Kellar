@@ -1,7 +1,12 @@
-[package]
-name = "kellar-network"
-version = "1.0.0"
-edition = "2021"
+[workspace]
+members = [
+    "ai-engines/*",
+    "offensive-security/*",
+]
+resolver = "2"
 
-[dependencies]
-tokio = { version = "1.35", features = ["full"] }
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
