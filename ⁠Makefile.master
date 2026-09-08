@@ -1,0 +1,14 @@
+# Master Monorepo Operations
+
+setup:
+	@echo "Setting up Kellar workspace..."
+	chmod +x scripts/*.sh
+
+build-all:
+	cargo build --release
+	npm run build
+	python3 -m pytest
+
+clean-artifacts:
+	rm -rf target/ dist/ build/ node_modules/.cache
+	@echo "Workspace cleaned successfully."
