@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kellar-enterprise
+description: Helm chart for Kellar High-Performance Enterprise Suite
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
