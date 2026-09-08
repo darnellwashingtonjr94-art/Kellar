@@ -25,16 +25,12 @@ The Kellar Ecosystem is a next-generation cybersecurity engine designed to fuse 
 
 ⚙️ 𝑯𝒐𝒘 𝒅𝒐𝒆𝒔 𝒕𝒉𝒊𝒔 𝒘𝒐𝒓𝒌?
 
-  [ System Telemetry ]
-           │
-           ▼
- ⚡ [ s3lf-c0n8ci0us ] ──(Low-Latency Engine)──► 📊 [ kellar-ui ]
-           │                                            ▲
-           ▼                                            │
- 📞 [ aquarius ] ──► 🤖 [ Gemini 3.1 Pro ] ──────────────┤
-           │                                            │
-           ▼                                            │
- ☣️ [ malware-sandbox ] ────────────────────────────────┘
+Telemetry ──► ⚡ s3lf-c0n8ci0us ──► 📊 kellar-ui
+                    │
+                    ├──► 📞 aquarius ──► 🤖 Gemini 3.1 Pro
+                    │
+                    └──► ☣️ malware-sandbox
+────────────────────────────────┘
 
  The system coordinates 4 isolated microservices over a shared Docker network:
  
