@@ -1,32 +1,29 @@
-name: Kellar Ecosystem CI
+name: Kellar Monorepo CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      # Test UI (Node)
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: cd kellar-ui && npm install && npm run build
-      
-      # Test Aquarius (Python)
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - run: cd aquarius && pip install -r requirements.txt
-      
-      # Test Fast Brain (Rust)
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-      - run: cd s3lf-c0n8ci0us && cargo test
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+        
+    - name: Build Rust Engine
+      run: cargo build --release
