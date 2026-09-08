@@ -1,4 +1,2 @@
 [workspace]
-members = [
-    "crates/security", # Update to match your actual directory structure
-]
+members = []
