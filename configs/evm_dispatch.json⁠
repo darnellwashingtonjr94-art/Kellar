@@ -1,0 +1,9 @@
+{
+  "network": "Monad-Devnet",
+  "execution_engine": "Flux-Ledger",
+  "concurrency_limit": 1024,
+  "mempool": {
+    "priority_fee_enabled": true,
+    "max_batch_size": 256
+  }
+}
