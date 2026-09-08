@@ -1,11 +1,12 @@
 [workspace]
 members = [
-    "ai-engines/*",
-    "offensive-security/*",
+    "src/network",     # High-frequency proxies
+    "src/security",    # Netmapper and recon tools
+    "src/bpf",         # eBPF/XDP loaders
 ]
 resolver = "2"
 
-[profile.release]
-opt-level = 3
-lto = true
-codegen-units = 1
+[workspace.dependencies]
+tokio = { version = "1.35", features = ["full"] }
+aya = "0.12" # eBPF library for Rust
+reqwest = { version = "0.11", features = ["json"] }
