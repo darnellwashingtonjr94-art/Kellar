@@ -1,4 +1,4 @@
-# Kellar Ecosystem
+# Kellar
 
 Kellar is a high-performance, asynchronous defense network and reasoning engine. It fuses parallel Rust-based computation, LLM-powered dynamic routing, and an isolated threat sandbox into a single cohesive UI.
 
