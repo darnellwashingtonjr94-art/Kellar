@@ -8,9 +8,11 @@
 ​High-Performance Asynchronous AI Network & Dynamic Threat Reasoning Engine
 
 🌐 𝑾𝒉𝒂𝒕 𝒊𝒔 𝒕𝒉𝒊𝒔 𝒂𝒃𝒐𝒖𝒕?
+
 The Kellar Ecosystem is a next-generation cybersecurity engine designed to fuse high-speed local telemetry with dynamic LLM-driven threat reasoning. It links real-time system surveillance, an asynchronous AI router, and an air-gapped malware detonation chamber into a unified, visual dashboard.
 
 ⚡ 𝑾𝒉𝒂𝒕 𝒕𝒉𝒊𝒔 𝒅𝒐𝒆𝒔?
+
 👁️ Monitors ➔ Actively tracks system execution, network sockets, and memory addresses at ultra-low latency.
 
 🧠 Analyzes ➔ Evaluates raw telemetry using fast heuristic passes to flag suspicious behavior instantly.
@@ -22,6 +24,7 @@ The Kellar Ecosystem is a next-generation cybersecurity engine designed to fuse 
 📊 Visualizes ➔ Streams live telemetry, threat metrics, and AI intelligence directly onto a custom React control terminal.
 
 ⚙️ 𝑯𝒐𝒘 𝒅𝒐𝒆𝒔 𝒕𝒉𝒊𝒔 𝒘𝒐𝒓𝒌?
+
   [ System Telemetry ]
            │
            ▼
@@ -52,10 +55,12 @@ Tech stack: React • Vite • Tailwind CSS
 Renders system telemetry, AI remediation notes, and sandbox diagnostics in real time.
 
 🔥 𝑾𝒉𝒚 𝒊𝒔 𝒕𝒉𝒊𝒔 𝒄𝒐𝒐𝒍?
+
 💡 Cognitive Defense over Rigid Rules
 Traditional antivirus systems rely on static signatures. Kellar couples the raw execution speed of Rust with the reasoning depth of LLMs. It doesn't just flag a file—it computes intent, translates complex system calls into plain language, and designs a tailored response on the fly.
 
 🎯 𝑾𝒉𝒂𝒕 𝒑𝒓𝒐𝒃𝒍𝒆𝒎𝒔 𝒕𝒉𝒊𝒔 𝒔𝒐𝒍𝒗𝒆𝒔?
+
 🔕 Alert Fatigue ➔ Replaces overwhelming log dumps with clean, prioritized AI summaries.
 
 👁️‍🗨️ Zero-Day Blindspots ➔ Detects novel threats by analyzing runtime behavior instead of relying purely on known file hashes.
@@ -63,6 +68,7 @@ Traditional antivirus systems rely on static signatures. Kellar couples the raw 
 🛡️ Blast Radius Containment ➔ Guarantees zero host leakage by forcing all payload detonation to occur within containerized air gaps.
 
 🚀 𝑯𝒐𝒘 𝒕𝒐 𝒊𝒏𝒔𝒕𝒂𝒍𝒍 𝒕𝒉𝒊𝒔?
+
 1. Configure Environment Secrets
    echo "GEMINI_API_KEY=your_actual_gemini_api_key_here" > .env
 
