@@ -1,0 +1,10 @@
+sandbox_policy:
+  name: "Sandb0x-Xtract0r-Strict"
+  version: "2.1.0"
+  monitoring:
+    network_egress: "block"
+    file_system_writes: "monitor"
+    registry_modifications: "intercept"
+  timeouts:
+    execution_limit_seconds: 60
+    quarantine_on_anomaly: true
