@@ -1,13 +1,13 @@
-# 1. Overwrite the corrupted Dockerfile with valid build instructions
+# 1. Write the clean, valid Dockerfile
 cat << 'EOF' > Dockerfile
-# Root Dockerfile for Kellar ecosystem CI/CD
 FROM ubuntu:latest
 WORKDIR /app
 COPY . .
 CMD ["echo", "Kellar Ecosystem root container built successfully"]
 EOF
 
-# 2. Overwrite the workflow to use the correct DOCKERHUB secrets
+# 2. Write the clean GitHub Actions workflow file
+mkdir -p .github/workflows
 cat << 'EOF' > .github/workflows/docker-publish.yml
 name: Docker Publish
 
@@ -34,6 +34,12 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/kellar-ecosystem:latest
+EOF
+
+# 3. Stage, commit, and push the clean updates
+git add Dockerfile .github/workflows/docker-publish.yml
+git commit -m "fix(infra): update Dockerfile and workflow with correct syntax"
+git push origin main
 EOF
 
 # 3. Stage, commit, and push the corrections
