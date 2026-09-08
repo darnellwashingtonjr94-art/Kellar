@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kellar-core-service
+  namespace: default
+  labels:
+    app: kellar-core
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kellar-core
+  template:
+    metadata:
+      labels:
+        app: kellar-core
+    spec:
+      containers:
+      - name: kellar-api
+        image: credkellarboop/kellar-api:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: KELLAR_ENV
+          value: "production"
+        resources:
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
