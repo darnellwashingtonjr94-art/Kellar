@@ -1,0 +1,16 @@
+#ifndef KELLAR_CORE_H
+#ifndef KELLAR_CORE_H
+#define KELLAR_CORE_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+int kellar_core_init(void);
+void kellar_core_shutdown(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
