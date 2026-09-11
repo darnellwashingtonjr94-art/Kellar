@@ -1,5 +1,5 @@
 {
-  "name": "Kellar Orchestrator,
+  "name": "kellar",
   "version": "1.0.0",
   "description": "Core application service for Kellar",
   "main": "index.js",
